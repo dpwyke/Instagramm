@@ -9,11 +9,11 @@ class PicsController < ApplicationController
     end
 
     def new
-        @pic = current_users.pic.build
+        @pic = current_user.pics.build
     end
 
     def create
-        @pic = current_users.pic.build(pic_params)
+        @pic = current_user.pic.build(pic_params)
 
         if @pic.save
             redirect_to @pic, notice: "Yasss! It was posted!"
